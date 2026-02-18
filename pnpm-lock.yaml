@@ -13,7 +13,7 @@ importers:
         version: 0.11.0-beta.24
       detritus-client-socket:
         specifier: github:LitterbinCollective/detritus-client-socket#0.8.4
-        version: https://codeload.github.com/LitterbinCollective/detritus-client-socket/tar.gz/f5f089cdb899f8659422d70cc84cf520ba3f9069
+        version: https://codeload.github.com/LitterbinCollective/detritus-client-socket/tar.gz/7439d31277cba9c5993d25447c331c1512b4ec88
       detritus-utils:
         specifier: ^0.4.0
         version: 0.4.0
@@ -148,8 +148,8 @@ packages:
   detritus-client-rest@0.11.0-beta.24:
     resolution: {integrity: sha512-85n1DPSEcvTpW+8mOlJn4ywAx2w+cEmJ0oymPZvdPLtENTlq9WPlTrogL7VbG/dWFI2mulrEnZi8r4lXUpFR8g==}
 
-  detritus-client-socket@https://codeload.github.com/LitterbinCollective/detritus-client-socket/tar.gz/f5f089cdb899f8659422d70cc84cf520ba3f9069:
-    resolution: {tarball: https://codeload.github.com/LitterbinCollective/detritus-client-socket/tar.gz/f5f089cdb899f8659422d70cc84cf520ba3f9069}
+  detritus-client-socket@https://codeload.github.com/LitterbinCollective/detritus-client-socket/tar.gz/7439d31277cba9c5993d25447c331c1512b4ec88:
+    resolution: {tarball: https://codeload.github.com/LitterbinCollective/detritus-client-socket/tar.gz/7439d31277cba9c5993d25447c331c1512b4ec88}
     version: 0.9.0-beta.5
     peerDependencies:
       erlpack: ^0.1.4
@@ -319,7 +319,7 @@ snapshots:
     transitivePeerDependencies:
       - eventemitter3
 
-  detritus-client-socket@https://codeload.github.com/LitterbinCollective/detritus-client-socket/tar.gz/f5f089cdb899f8659422d70cc84cf520ba3f9069:
+  detritus-client-socket@https://codeload.github.com/LitterbinCollective/detritus-client-socket/tar.gz/7439d31277cba9c5993d25447c331c1512b4ec88:
     dependencies:
       '@hpke/core': 1.7.5
       '@noble/curves': 1.9.7
