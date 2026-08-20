@@ -16,6 +16,8 @@ export class ComponentContext {
   readonly client: ShardClient;
   readonly interaction: Interaction;
 
+  metadata?: Record<string, any>;
+
   constructor(interaction: Interaction) {
     this.interaction = interaction;
     this.client = interaction.client;
@@ -72,6 +74,14 @@ export class ComponentContext {
   }
 
   /* Client Collections */
+  get applicationCommandPermissions() {
+    return this.client.applicationCommandPermissions;
+  }
+
+  get applicationEmojis() {
+    return this.client.applicationEmojis;
+  }
+
   get applications() {
     return this.client.applications;
   }
@@ -86,6 +96,10 @@ export class ComponentContext {
 
   get guilds() {
     return this.client.guilds;
+  }
+
+  get guildScheduledEvents() {
+    return this.client.guildScheduledEvents;
   }
 
   get interactions() {
@@ -145,11 +159,19 @@ export class ComponentContext {
   }
 
   /* Interaction Properties */
-  get customId(): string {
-    return this.data.customId;
+  get _responding() {
+    return this.interaction._responding;
   }
 
-  get data(): InteractionDataComponent {
+  get appPermissions() {
+    return this.interaction.appPermissions;
+  }
+
+  get attachmentSizeLimit() {
+    return this.interaction.attachmentSizeLimit;
+  }
+
+  get data() {
     return this.interaction.data as InteractionDataComponent;
   }
 
@@ -161,12 +183,32 @@ export class ComponentContext {
     return this.interaction.channelId!;
   }
 
+  get customId(): string {
+    return this.data.customId;
+  }
+
+  get entitlements() {
+    return this.interaction.entitlements;
+  }
+
   get guild() {
     return this.interaction.guild;
   }
 
   get guildId() {
     return this.interaction.guildId;
+  }
+
+  get guildLocale() {
+    return this.interaction.guildLocale;
+  }
+
+  get guildPartial() {
+    return this.interaction.guildPartial;
+  }
+
+  get hasServerPermissions() {
+    return this.interaction.hasServerPermissions;
   }
 
   get id() {
@@ -177,6 +219,14 @@ export class ComponentContext {
     return this.interaction.inDm;
   }
 
+  get inDmWithBot() {
+    return this.interaction.inDmWithBot;
+  }
+
+  get inDmWithUsers() {
+    return this.interaction.inDmWithUsers;
+  }
+
   get interactionId() {
     return this.interaction.id;
   }
@@ -184,8 +234,11 @@ export class ComponentContext {
   get locale() {
     return this.interaction.locale;
   }
-  
+
   get maxAttachmentSize(): number {
+    if (this.attachmentSizeLimit) {
+      return this.attachmentSizeLimit;
+    }
     const guild = this.guild;
     if (guild) {
       return guild.maxAttachmentSize;
@@ -203,10 +256,6 @@ export class ComponentContext {
 
   get member() {
     return this.interaction.member;
-  }
-
-  get message(): Message {
-    return this.interaction.message!;
   }
 
   get responded() {
